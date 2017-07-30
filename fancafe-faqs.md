@@ -11,3 +11,6 @@
   * Find your post (usually close in time to when you first submitted it and should be visible to you.)
   * A staff member is likely to have replied to it.
   * The reply text is usually safe to copy and paste into Naver/Google Translate.
+  
+* **Changing Nickname**
+  * Click the underlined word in your own profile ![Profile](http://i.imgur.com/ckBtUNk.png)
