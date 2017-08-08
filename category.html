@@ -74,8 +74,13 @@ Here we generate all the categories.
         {{ post.title }}
         <small>{{ post.date | date_to_string }}</small>
       </a>
+      <br>
+      <h4>
+      Tags
+      <br>
       {% for tag in post.tags %}
       <a class="codinfox-tag-mark" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+      </h4>
       {% endfor %}
     </h3>
   </li>
