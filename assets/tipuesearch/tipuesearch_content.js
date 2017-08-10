@@ -72,7 +72,7 @@ var tipuesearch = {"pages": [
 {%- for document in index -%}
   {%- assign tags = document.tags -%}
   {%- assign categories = document.categories -%}
-  {%- assign taxonomies = tags | concat: categories | uniq -%}
+  {%- assign taxonomies = tags | uniq -%}
   {
     "title": {{ document.title | smartify | strip_html | normalize_whitespace | jsonify }},
     "text": {{ document.content | strip_html | normalize_whitespace | jsonify }},
