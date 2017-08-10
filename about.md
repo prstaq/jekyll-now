@@ -5,4 +5,4 @@ permalink: /about/
 published: true
 ---
 
-[@prstaq](https://twitter.com/prstaq)
+<a href="https://twitter.com/prstaq" target="_blank">@prstaq</a>
