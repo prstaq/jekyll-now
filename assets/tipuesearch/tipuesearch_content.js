@@ -8,7 +8,7 @@ layout: null
 {%- assign excluded_files = site.tipue_search.exclude.files -%}
 {%- assign excluded_tags = site.tipue_search.exclude.tags -%}
 {%- assign excluded_categories = site.tipue_search.exclude.categories -%}
-{%- assign excluded_taxonomies = excluded_tags | concat: excluded_categories | uniq -%}
+{%- assign excluded_taxonomies = excluded_tags | uniq -%}
 {%- for post in site.posts -%}
   {%- unless post.exclude_from_search == true or excluded_files contains post.path -%}
     {%- assign has_excluded_taxonomy = false -%}
