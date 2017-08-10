@@ -16,9 +16,32 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDFV21h74fyaSKgvqQVWeMgVUCV9m_uId4",
+    authDomain: "pristin-search.firebaseapp.com",
+    databaseURL: "https://pristin-search.firebaseio.com",
+    projectId: "pristin-search",
+    storageBucket: "",
+    messagingSenderId: "492268310390"
+  };
+  firebase.initializeApp(config);
+</script>
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    
+    {% if page.tipue_search_active or layout.tipue_search_active %}
+<link rel="stylesheet" href="{{ "/assets/tipuesearch/css/normalize.css" | relative_url }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
+<link rel="stylesheet" href="{{ "/assets/tipuesearch/css/tipuesearch.css" | relative_url }}">
+<script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
+<script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
+{% endif %}
   </head>
 
   <body>
@@ -32,9 +55,9 @@
 
           <nav>
             <a href="{{ site.baseurl }}/">archive</a>
-            <a href="{{ site.baseurl }}/about">about</a>
             <a href="{{ site.baseurl }}/calendar">calendar</a>
-            <a href="{{ site.baseurl }}/fancafe-faqs">fancafe faqs</a>
+            <a href="{{ site.baseurl }}/search">search</a>
+            <a href="{{ site.baseurl }}/misc">misc</a>
           </nav>
         </header>
       </div>
