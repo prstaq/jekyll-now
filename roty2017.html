@@ -1,0 +1,300 @@
+<body>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+	<!-- custom demo style -->
+	<link rel="stylesheet" type="text/css" href="css/demo4.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/jquerypp.custom.js"></script>
+	<script src="js/jquery.bookblock.js"></script>
+		<script>
+			var Page = (function() {
+				var config = {
+						$bookBlock : $( '#bb-bookblock' ),
+						$navNext : $( '#bb-nav-next' ),
+						$navPrev : $( '#bb-nav-prev' ),
+						$navFirst : $( '#bb-nav-first' ),
+						$navLast : $( '#bb-nav-last' )
+					},
+					init = function() {
+						config.$bookBlock.bookblock( {
+							speed : 1000,
+							shadowSides : 0.8,
+							shadowFlip : 0.4
+						} );
+						initEvents();
+					},
+					initEvents = function() {
+						
+						var $slides = config.$bookBlock.children();
+
+						// add navigation events
+						config.$navNext.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'next' );
+							return false;
+						} );
+
+						config.$navPrev.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'prev' );
+							return false;
+						} );
+
+						config.$navFirst.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'first' );
+							return false;
+						} );
+
+						config.$navLast.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'last' );
+							return false;
+						} );
+						
+						// add swipe events
+						$slides.on( {
+							'swipeleft' : function( event ) {
+								config.$bookBlock.bookblock( 'next' );
+								return false;
+							},
+							'swiperight' : function( event ) {
+								config.$bookBlock.bookblock( 'prev' );
+								return false;
+							}
+						} );
+
+						// add keyboard events
+						$( document ).keydown( function(e) {
+							var keyCode = e.keyCode || e.which,
+								arrow = {
+									left : 37,
+									up : 38,
+									right : 39,
+									down : 40
+								};
+
+							switch (keyCode) {
+								case arrow.left:
+									config.$bookBlock.bookblock( 'prev' );
+									break;
+								case arrow.right:
+									config.$bookBlock.bookblock( 'next' );
+									break;
+							}
+						} );
+					};
+
+					return { init : init };
+
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>	
+		<div class="container">
+			<div class="bb-custom-wrapper">
+				<div id="bb-bookblock" class="bb-bookblock bb-vertical">
+					<div class="bb-item" style="display: block;">
+						<div class="bb-custom-firstpage">
+							<h1>BookBlock <span>A Content Flip Plugin</span></h1>	
+							<nav class="codrops-demos">
+								<a href="index.html">Demo 1</a>
+								<a href="index2.html">Demo 2</a>
+								<a href="index3.html">Demo 3</a>
+								<a class="current-demo" href="index4.html">Demo 4</a>
+								<a href="index5.html">Demo 5</a>
+							</nav>
+							<nav class="codrops-nav">
+								<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/MultipleAreaChartsD3/"><span>Previous Demo</span></a>
+								<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/"><span>Back to the Codrops Article</span></a>
+							</nav>
+						</div>
+						<div class="bb-custom-side">
+							<p>Dear PRISTIN, here are just a few messages from your HIghs. We couldn't be prouder,
+							could not be more thankful.</p>
+						</div>
+					</div>
+					<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">xiaodee</div>
+		<div class="content">just want to let you girls know that you’ve all done a good job so far. HIghs will always work hard to give you the best! Hope you girls are doing well:) Lastly, congrats on your first rookie award that you girls deserve it! 
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Mira</div>
+		<div class="content">Hello, Pristin! First off, I would like to say congratulations on your first ever Rookie of the Year award! As a HIgh, I am so proud of all of you for making it this far. Since your trainee days and as Pledis Girlz, you have all worked hard and overcame many challenges to get to where you are today. May this be the beginning of many more good things to come, and I hope Pristin will be a group that shines for many years to come. Good luck to all of you and thank you for making my life brighter. From your loyal and loving fan, Mira :)
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Kristin</div>
+		<div class="content">!!! I knew from the very beginning that with the name Pristin, (since it’s similar to my name Kristin) you would be successful ㅋㅋㅋ but really, I’ve never been more proud of you girls and to be a HIgh ㅠㅠㅠㅠ You’ve really done it and I know it will only get better from here!!! I love you with my whole heart and will always support you in the future no matter what!! Pristin fighting!!!!! 💗x10
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Geli</div>
+		<div class="content">Congratulations on your first ever Awards show win!!! I am seriously so happy for you and I look forward to more of your music and performances!!! I hope that this is the start to the rest of your flower path~ PRISTIN and HIghs, 언제나 우리 함께 힘내 힘내
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Lyca Festejo</div>
+		<div class="content">Hello Pristin 언니! Congratulations for winning Rookie of the Year! I'm so happy and proud for you. Please continue to be happy and bubbly and always take care of your health. Please don't get sick, especially since winter is coming. I will forever be your HIgh <3 영웒이 사랑해!! 언니 축하해요!! 
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Mica (@moominvaIley)</div>
+		<div class="content">Hello!!!! Congratulations on your first Rookie of the Year Award at the AAAs!! I have been waiting so long for you all to bring home an award well-deserved. I have been a fan ever since your Pledis Girlz days, and I have never regretted running into your YouTube channel and pre-debut videos. You all are very talented and deserve all the best no matter what! May more awards come for you, I know you'll be a legendary group. HIghs will bring Pristin higher than ever before. I love you all so much, and I will always be here for you all. :)
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">nisa</div>
+		<div class="content">hello guys!! first of all, i'm so happy and proud of you because all of your hardworks and efforts are being paid off. what makes me even proud is that you never give up on your dreams because you know that HIghs are always there for you. congratulations for winning roty!! it's what you deserve. let's continue the journey together with us (HIghs) till the end. i'm so grateful because i  have PRISTIN in my life😁. just remember that HIghs are always here to support and send you lots of love!!💖💖💖💖💖 HIghs ❤ PRISTIN
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">nessa</div>
+		<div class="content">congratulations on your first roty win! we Highs hope to bring more awards to you guys . I LOVE U GUYS SO MUCH!! thank you for being a group that im proud of and hope to see u achieving great successes in the future 사랑해 프리스틴 영원히 가자 !  -Singapore HIgh😙
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">itsmapleman</div>
+		<div class="content">My babies! I love you all so much. With your hard work, dedication and perseverance you have achieved an amazing feat. Congratulations my loves! We HIghs will continue to work harder into making the whole world know of our love for Pristin. We will love and support Pristin until the end of time. Pristin gives us wings in our times of sorrow and keeps us HIgh with love. Love always ~🍁Maple
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Sarastin</div>
+		<div class="content">Congratulations, my love, I look forward to you proudly,highs always with you so you do not worry and continue and we will be the wall that you rely on, I love you, good luck, greetings, Sarah from Algeria❤❤❤ 
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Highstin </div>
+		<div class="content">I hope you get a lot of prizes. Do not be afraid. We are with you. We will always support you❤go go pristin, ❤
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">BeMyGuest </div>
+		<div class="content">I fell in love with Pristin since the very debut. You have made me very happy and proud ever since. I congratulate you on first award and thank you for always working hard and giving your best! Let's continue to walk this road together, Pristin and HIgh, to many more happy moments and success to come! Once again, thank you! 
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Elizabeth @EvyEarthling</div>
+		<div class="content">Who needs drugs when we can get HIgh on Pristin?! Congrats on winning Rookie of the Year, girlies! I hope you get to eat well, rest well, and prepare well for your next comeback! Love you all!!! PS. I miss Kyla.
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Tasnia</div>
+		<div class="content">Kyungwon, thank you for helping me through hard times. Your sparkly eyes and your heartwarming personality are the first and last things I think about everyday. You are so perfect and I hope you know this. I am wishing for Pristin's success and happiness, and your success and happiness everyday. I love you so much.   All ten of you make me feel like the happiest person in the world. I will be your fan for as long as I can. 
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">@xiyeonplanet | sns</div>
+		<div class="content">congratulations for getting roty at AAA 🎉 and also 시연야 생일 축하해요 !! ♥ 2018,2019,2020...우리 같이 꽃길걸어요🌸 !! 프리스틴 화이팅 !! 시연야 건강히 지내세요 :) 널 항상 응원해줄거야 💓 i’m not the best in korean but we’ll always support & love PRISTIN !! we love & appreciate each and every one of you 💓 thank you to stone nayoung our leader for caring for our precious ot10 we like kyla we love kyla we miss kyla 💕 - @xiyeonplanet | SNS
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">zoltzl</div>
+		<div class="content">I’m so happy to see that you are doing so well! Thank you for all your hard work and remember that you’ll always have your fans’ support<3
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Cailyn Dawson </div>
+		<div class="content">CONGRATULATIONS!!!! I’m so proud of you guys. All your hard work and years of practice are starting to pay off, but this is just the beginning. Keep doing what you love and just know that HIgh’s will be with you every step of the way.
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Jewell</div>
+		<div class="content">I’m so proud of you. I’m so, so, so happy to have followed you since debut and be here for everything. This achievement has made me realize how much I love being your fan, and there isn’t a person in the world who could tell me you don’t deserve this. You’ve worked so hard, and I can only hope you never assume you did not try hard enough or that you’re lacking in any way. We, HIghs, will never stop loving and supporting you with all our hearts, and we hope to stay with you forever to see you reach more milestones and achieve great things. We will work hard to be your pride, forever and always. ❤️ #PRISTIN_AND_HIgh 
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Myna</div>
+		<div class="content">Sound out! I would like to say that congratulations to you girls. Finally, the dream that you always wished for came true. We HIghs are really really really proud of you girls. You've worked hard for it and you really deserved that award. We HIghs will try are best to support you in every way. Let's get more awards in the future. Fighting! Pristin princesses! 
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Myna</div>
+		<div class="content">Sound out! I would like to say that congratulations to you girls. Finally, the dream that you always wished for came true. We HIghs are really really really proud of you girls. You've worked hard for it and you really deserved that award. We HIghs will try are best to support you in every way. Let's get more awards in the future. Fighting! Pristin princesses! 
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Bun Bun</div>
+		<div class="content">Pristin, congratulations on winning the Rookie Of The Year Award! You deserved it since you guys work very hard. I'm very proud of all of you and I know you will win a lot more awards in the future! Make sure to eat and rest well. Fighting Pristin! I love you all. 
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">KC Huntinghawk</div>
+		<div class="content">I have to say. I had just become a stan. And it's been so fun listening, watching, and laughing with you. I love you all!!! I prefer not to say my bias or bias wrecker(good thing btw) bc I'd rather love you all. You're all so talented and beautiful. I congratulate you all and wish you the best in your future career!! Love you Eunwoo Hun🖤🖤 
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">Jennifer Vodongso </div>
+		<div class="content">You guys are awesome and such a talented group! I see so much potential for the future and send my love to you guys. We will always be here for you through your happiest and tough times. I hope you come to SF one day! I love that you guys are so involved in your songs as well as your brother group. Please also tell them that we PRISTIN fans will always support Pledis family. PRISTIN FIGHTING!
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Kondi</div>
+		<div class="content">Our Pristin~ Congrats! I'm so proud of you! Honestly, I had a really good feeling you all were going to win ROTY, and it seems like I was right! I'm seriously so proud!!! ㅠㅠ You're improving really well and really quickly in song writing and composing! I'll be looking forward to your future albums!  Again, congrats, and I'll be rooting for you for MAMA! Hwaiting Pristin ❤
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">teddy</div>
+		<div class="content">congratulations, our lovely, hardworking pristin~!! i was at school when i heard that you guys had won the awards and i honestly cried (tears of joy of course!) 😭 you guys are my most favorite group of all time and i don’t know how much i can pay you all back for all of your hardwork, dedication, and love to highs 😞💕 i will do my best to be a good high, and to do things that will make you proud and happy of your fans <3 i don’t know if you will read my letter word for word but i just wanted to talk about how much you all mean to me and how much you’ve done for me. each and every one of the pristin members are special to me. nayoung, you’re an amazing leader, you lead the girls through the thick and thin and your leadership is the best. roa, you’re my inspriation, the one who cheers me up even if you do the smallest thing like flash one of your precious smiles. yuha, you’re such a dork but you know how to be serious at the right time, i love your personality and your everything. eunwoo, you’re one of the most energetic and hyper idols i’ve ever seen (in a good way), you’ve made me laugh in so many different ways. rena, you’re my role model, someone who i look up to due to your charisma but also your playful side. kyulkyung, you’re my queen, everyone i know loves you! your gummy smile always warms up my heart. sungyeon, you’re one of my most favorite vocalists in the kpop industry, your smooth, sweet vocals always tugs at my heart. yehana, you’re the sunshine in my darkness, you always shine so brightly amongst everyone else, your smile is such a blessing. xiyeon, you’re our multi-talented boss who seem to blow everyone away everytime you walk into a room, stay awesome! kyla, you’re the most precious gem ever!!! stay healthy and confident, girl! you’re beautiful! this is probably a bit too long so overall, i wanted to let all 10 of y’all know that you are such a BIG, BIG, BIG!!!!!!!! blessing to highs. and about the award? you guys deserve it! your hardwork has paid off! i will continue voting for you for rookie of the year in other awards and to support you for many, many more years that pristin lasts for 💕💘 i love you so much, congrats again!
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">bea / abigail c.</div>
+		<div class="content">my dear 프리스틴,  congratulations on your roty award! 축하합니다!!! you deserve it so much ♡  thank you for your hard work. thank you for your efforts in making us HIghs happy and contented. ♡♡  we're really sorry for not trying so hard that we didn't give you your first win this year ;-; don't worry, loves, we'll work thrice as hard to give you your first win on your next comeback.  we wish you good health all the time.  good luck and god bless girls!  사랑해! 부부♡  ps. sorry for the long message. hehe                                - bea / 베이야 / 하린 
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">cas (@wooeuns) :D</div>
+		<div class="content">peutin kids, congratulations! you've done so and come so far...have you been resting well? eating well? taking care of yourselves? when i look up at the stars and the sky i sometimes think of you. if you ever need support just look at the sky too, okay? heh. lets all work hard together.   i love you. i promise to grow up, work hard and see you guys for real, one day. there is nothing i want more than for you to be successful. let's look towards more awards in the future, like looking at the sky.  爱你们，爱你们，爱你们好多。洁琼呀，只有你可以读这段话吗？呵呵...看你们成长, 陪你们成长...真的是一个独一无二的经验。 陪你玩，笑，哭...看你和你的组员一起玩乐给我的快乐千言万语也道不到。祝贺你们！！照顾你的组员们吧，特别那一位“我很漂亮”的女儿...呵呵...像天上的月亮，让我们一起互相照亮未来的路。💓💙
+</div>
+	</div>
+	<div class="bb-custom-side">
+		<div class="name">Claudio Toledo</div>
+		<div class="content">안녕 소녀들! 나는 101 일을 생산 한 이래로 너를 따라 왔으며 나는 너를 얼마나 자랑스럽게 여기는 지 설명 할 수 없다. 너는 지금까지왔다! 너 자신을 보아라, 당신은 올해의 신인상을 수상했다! 이것은 두려운 성취입니다. 여러분 모두가 자신 만의 형태로 독특합니다. 당신은 모두 재능이 있습니다. 당신들은 저의 가장 큰 영감 중 하나입니다. 나영, 너는 그 그룹이 가질 수있는 최고의 지도자 야, 내가 말할 수있는 것은 무엇일까요, 당신은 아름다움과 재능의 정의입니다,. 로아 당신은 문자 그대로의 공주님입니다. 당신은 모든 것을 가지고 있습니다! 레나 는 당신이 내가 듣는 최고의 랩퍼라고 노래를 부르고, 춤을 추며, 뛰어난 아름다움을 가질 수 있다고 말하게합니다. 유하 너는 너무 완벽해서 너를 너무 많이 사랑하지 마라. 예하나 너는 신이다. 성연, 너 천사의 목소리가있어 핑키 너를 사랑해, 은우 너는 너무 재능 있고 재능이있어, Kyla 내 소중한  막내 , 네가 나아지기를 바래, 우리 모두 너를 사랑해, 싸우라! 내 나쁜 한국에 대한 미안, 난 남아메리카에서, 칠레는 당신을 사랑해! 프리 스틴 투기!
+</div>
+	</div>
+</div>
+<div class="bb-item" style="display: none;">
+	<div class="bb-custom-side">
+		<div class="name">iluveverykpopgroup</div>
+		<div class="content">Hello Pristin! Congratulations on winning the ROTY award! Thank you for working so hard and providing us with so many talented sides of yours. I know it's been a long journey for some of you, but you know what, hard work really does pay off. Once again I would like to congratulate you guys on winning ROTY. And I hope all of Pristin stay healthy. Thank you!!!</div>
+	</div>
+
+				</div>
+
+				<nav>
+					<a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a>
+					<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
+					<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
+					<a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
+				</nav>
+
+			</div>
+
+		</div><!-- /container -->
+</body>
