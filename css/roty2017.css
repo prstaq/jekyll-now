@@ -26,7 +26,7 @@
 	width: 50%;
 	float: left;
 	height: 100%;
-	overflow: hidden;
+	overflow: auto;
 	background: #fff;
 	/* Centering with flexbox */
 	display: -webkit-box;
@@ -45,11 +45,6 @@
 	-moz-box-align: center;
 	-webkit-align-items: center;
 	align-items: center;
-	overflow: hidden;
-}
-
-.bb-item {
-	overflow-y: auto;
 }
 
 .bb-custom-firstpage h1 {
